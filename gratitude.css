@@ -1,0 +1,202 @@
+/* General Styling for Body */
+body {
+    background-image: url('grat.png'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center;
+    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+    font-family: 'Arial', sans-serif; /* Use a clean, modern font */
+    color: #333; /* Ensures text remains visible */
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+h1 {
+    text-align: center; /* Center the heading */
+    background-color: white; /* White background for contrast */
+    color: #333; /* Dark color for text */
+    padding: 15px;
+    border-radius: 8px;
+    width: 80%; /* Limit the width for better positioning */
+    margin: 20px auto; /* Center the heading and add margin */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow */
+}
+
+/* Optional: Style h2 if you'd like a similar effect for subheadings */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Navbar with pastel blue */
+.navbar {
+    background-color: #9aa9b5; /* Strong blue */
+    padding: 10px;
+    position: sticky; /* Sticky navbar */
+    top: 0;
+    justify-content: center;
+    z-index: 1000;
+    width: 100%;
+    box-shadow: 0 4px 6px rgba(202, 193, 193, 0.1);
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center navbar links */
+    margin: 0;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #010041; /* Yellow color when hovered */
+    transform: scale(1.1); /* Slightly enlarge the link */
+}
+
+.navbar a:active {
+    color: #022b27; /* Active color (when clicked) */
+    transform: scale(0.95); /* Shrink the link slightly */
+}
+
+/* Gratitude Form Styling */
+#gratitude-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+#gratitude-input {
+    width: 100%;
+    max-width: 400px;
+    padding: 12px;
+    margin-bottom: 20px;
+    background-color: #e0f7fa; /* Light cyan */
+    border-radius: 8px;
+    border: 1px solid #0077b6;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensure padding doesn't overflow */
+    transition: all 0.3s ease;
+}
+
+#gratitude-input:focus {
+    border-color: #ff6f61;
+    outline: none;
+}
+
+.cta-button {
+    padding: 12px 20px;
+    background-color: #ff6f61; /* Coral */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.cta-button:hover {
+    background-color: #ff4d3f; /* Darker coral */
+    transform: scale(1.05); /* Slight scaling effect on hover */
+}
+
+/* Enhanced Microphone Button Styling */
+.mic-button {
+    background-color: #FF7F50; /* Coral color */
+    border: none;
+    padding: 12px 18px; /* Oval shape with more width than height */
+    font-size: 24px; /* Larger font size for visibility */
+    cursor: pointer;
+    color: white;
+    border-radius: 25px; /* Oval appearance */
+    margin-left: 10px;
+    position: relative;
+    top: 10px; /* Lowers the button slightly */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mic-button:hover {
+    background-color: #FF6347; /* Slightly darker coral on hover */
+    transform: scale(1.1); /* Slight enlargement on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+.mic-button:active {
+    background-color: #E74C3C; /* Deep coral when active */
+    transform: scale(0.95); /* Slight shrink on click */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow reduction */
+}
+
+
+
+/* Gratitude List Styling */
+#gratitude-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+#gratitude-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f1f8e9; /* Light pastel green */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#gratitude-list li:hover {
+    background-color: #e3f7e1; /* Lighten when hovered */
+}
+
+#gratitude-list li span {
+    font-weight: bold;
+    color: #333;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+     /* Light blue */
+    color: black;
+    padding: 5px;
+    margin-top: 500px;
+    font-size: 14px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    #gratitude-input,
+    .cta-button {
+        width: 80%; /* Make inputs and buttons more responsive */
+    }
+
+    #gratitude-form {
+        margin-top: 30px;
+    }
+}

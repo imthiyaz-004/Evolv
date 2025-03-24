@@ -1,0 +1,163 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Modern, clean font */
+}
+
+body {
+    background-image: url(event.png); /* Soft gradient */
+    background-size:cover;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(0, 24, 44, 0.9); /* Slight transparency */
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between links */
+}
+
+.navbar li a {
+    color: #e6e6e6; /* Soft white */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.navbar li a:hover {
+    background: #38bdf8; /* Bright hover effect */
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Main Container */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #004a7c; /* Deep blue */
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+input, button {
+    width: 100%;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    background: #eef7ff; /* Subtle background change */
+    transform: scale(1.02);
+}
+
+button {
+    background: linear-gradient(to right, #38bdf8, #0077b6);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 119, 182, 0.4);
+}
+
+button:hover {
+    background: #005b8a;
+    transform: translateY(-3px); /* Slight lift effect */
+}
+
+/* Event List */
+#eventList {
+    margin-top: 30px;
+    list-style: none;
+    padding: 0;
+}
+
+#eventList li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: linear-gradient(to right, #f1f9ff, #dceeff);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#eventList li:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#eventList li span {
+    color: #004a7c;
+    font-weight: bold;
+}
+
+#eventList li button {
+    background: #ff6f61;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+#eventList li button:hover {
+    background: #d84e3b;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: linear-gradient(to right, #38bdf8, #0077b6);
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+    font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    input, button {
+        font-size: 14px;
+    }
+
+    #eventList li {
+        font-size: 14px;
+    }
+}

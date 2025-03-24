@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Assistant</title>
+    <script>
+        // Web Speech API for Speech Recognition
+        var recognition;
+        var isRecognizing = false;
+
+        function startVoiceRecognition() {
+            if (window.SpeechRecognition || window.webkitSpeechRecognition) {
+                recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+                recognition.continuous = false; // stop after one phrase
+                recognition.lang = 'en-US'; // Set language
+                recognition.interimResults = false; // Only final results
+
+                recognition.onstart = function() {
+                    isRecognizing = true;
+                    console.log('Voice recognition started');
+                };
+
+                recognition.onresult = function(event) {
+                    var command = event.results[0][0].transcript.toLowerCase();
+                    console.log("Voice command received: " + command);
+
+                    // Process the command
+                    processCommand(command);
+                };
+
+                recognition.onend = function() {
+                    isRecognizing = false;
+                    console.log('Voice recognition stopped');
+                };
+
+                recognition.onerror = function(event) {
+                    console.error("Error occurred in recognition: " + event.error);
+                };
+
+                recognition.start();
+            } else {
+                alert("Speech Recognition API is not supported in your browser.");
+            }
+        }
+
+        // Function to process recognized command and navigate
+        function processCommand(command) {
+            // Example of handling commands for navigation
+            if (command.includes("to-do")) {
+                window.location.href = "todo.html"; // Redirect to To-Do List page
+            } else if (command.includes("budget")) {
+                window.location.href = "budget.html"; // Redirect to Budget Tracker page
+            } else if (command.includes("gratitude")) {
+                window.location.href = "gratitude.html"; // Redirect to Gratitude List page
+            } else if (command.includes("events")) {
+                window.location.href = "events.html"; // Redirect to Event Countdown page
+            } else if (command.includes("home")) {
+                window.location.href = "index.html"; // Redirect to Home page
+            } else {
+                alert("Command not recognized. Try saying 'To-Do', 'Budget', 'Gratitude', 'Events', or 'Home'.");
+            }
+        }
+
+        // Start recognition when the page loads
+        window.onload = function() {
+            document.getElementById("start-voice").addEventListener("click", startVoiceRecognition);
+        };
+    </script>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('voi.png');
+            background-size: cover;
+            background-position: center;
+            color: #fff; /* Default text color */
+            text-align: center;
+            min-height: 100vh; /* Ensures the page covers the full viewport */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-attachment: fixed; /* Makes the background image stay fixed while scrolling */
+        }
+    
+        /* Heading Styling */
+        h1 {
+            color: #007bff;
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Glowing text effect */
+            letter-spacing: 1px;
+        }
+    
+        /* Call-to-Action Button Styling */
+        .cta-button {
+            padding: 15px 30px;
+            background-color: #007bff;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.3s ease; /* Smooth transition */
+            display: inline-block;
+            box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4); /* Adds shadow to button */
+        }
+    
+        .cta-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05); /* Slight button enlarge effect on hover */
+            box-shadow: 0 8px 16px rgba(0, 123, 255, 0.6); /* Stronger shadow on hover */
+        }
+    
+        .cta-button:active {
+            background-color: #004085;
+            transform: scale(0.98); /* Slight shrink effect when the button is clicked */
+        }
+    
+        /* Voice Output Styling */
+        #voice-output {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #f8f9fa; /* Light color for better readability */
+            font-weight: normal;
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for contrast */
+            padding: 10px 20px;
+            border-radius: 8px;
+            max-width: 90%;
+            margin: 20px auto;
+        }
+    
+        /* Animation for the voice output */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        #voice-output {
+            animation: fadeIn 1s ease-out;
+        }
+    
+        /* Media Queries for Mobile Optimization */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem; /* Adjust font size for smaller screens */
+            }
+    
+            .cta-button {
+                padding: 12px 25px; /* Adjust button size for smaller screens */
+                font-size: 1rem;
+            }
+    
+            #voice-output {
+                font-size: 1.1rem; /* Slightly smaller text for mobile */
+                max-width: 95%; /* Allow more flexible width for voice output on mobile */
+            }
+        }
+    
+    </style>
+    
+</head>
+<body>
+    <h1>Voice Assistant</h1>
+    <p>Click the button below to start voice recognition and say commands like 'To-Do', 'Budget', 'Gratitude', or 'Events' to navigate through the website.</p>
+    <button id="start-voice" class="cta-button">Start Voice Assistant</button>
+    <div id="voice-output"></div>
+
+    <script>
+        // Optional: Output command to the screen
+        recognition.onresult = function(event) {
+            var command = event.results[0][0].transcript.toLowerCase();
+            document.getElementById("voice-output").innerHTML = "You said: " + command;
+            processCommand(command);
+        };
+    </script>
+</body>
+</html>

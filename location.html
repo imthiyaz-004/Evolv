@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Enhanced Location Organizer</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #00182c, #004f8a); /* Dark blue gradient */
+            color: #eaeaea; /* Light text for contrast */
+            text-align: center;
+        }
+    
+        h1 {
+            background-color: #005bb5; /* Rich blue header */
+            color: white;
+            margin: 0;
+            padding: 20px;
+            font-size: 2rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+        }
+    
+        /* Map Styling */
+        #map {
+            height: 500px;
+            width: 90%;
+            margin: 20px auto;
+            border-radius: 15px; /* Softer edges */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Deeper shadow for a modern look */
+            border: 2px solid #005bb5;
+        }
+    
+        /* Button Container */
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+    
+        /* Buttons */
+        button {
+            background: linear-gradient(to right, #0078FF, #005bb5); /* Gradient for buttons */
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+        }
+    
+        button:hover {
+            background: linear-gradient(to right, #005bb5, #003f73); /* Darker gradient on hover */
+            transform: translateY(-2px); /* Subtle lift */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+    
+        /* InfoWindow Content */
+        .infowindow-content {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #333; /* Ensure readability */
+        }
+    
+        .infowindow-content img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px; /* Slightly rounded corners */
+            margin: 10px 0;
+            border: 1px solid #0078FF; /* Matches theme */
+        }
+    
+        .infowindow-btn {
+            display: inline-block;
+            margin: 5px 0;
+            padding: 6px 10px;
+            background-color: #005bb5;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .infowindow-btn:hover {
+            background-color: #003f73;
+        }
+    
+        /* Output Section */
+        #output {
+            margin: 20px auto;
+            font-size: 1rem;
+            color: #d1eaff; /* Soft blue text */
+            background: rgba(0, 24, 44, 0.8); /* Semi-transparent background */
+            padding: 15px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.5rem;
+                padding: 15px;
+            }
+    
+            #map {
+                height: 300px;
+            }
+    
+            button {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+        }
+    </style>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChN2JWime-qkorbfZW_lDiAz4jboc7icA&libraries=places"></script>
+</head>
+<body>
+    <h1>Enhanced Location-Based Features</h1>
+
+    <!-- Buttons for Functionality -->
+    <div class="btn-container">
+        <button onclick="window.location.href = 'index.html'">Home</button>
+        <button onclick="startVoiceCommands()">🎙️ Voice Commands</button>
+        <button onclick="getUserLocation()">📍 Show My Location</button>
+        <button onclick="findNearbyPlaces()">🗺️ Find Nearby Places</button>
+    </div>
+
+    <!-- Map and Output -->
+    <div id="map"></div>
+    <p id="output">Your location will appear here...</p>
+
+    <script src="location.js"></script>
+</body>
+</html>

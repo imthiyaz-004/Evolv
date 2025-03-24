@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Planner</title>
+    <link rel="stylesheet" href="events.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script defer src="events.js"></script>
+</head>
+<body>
+    <header>
+       <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html"><i class="fa fa-house"></i> Home</a></li>
+            <li><a href="voice.html"><i class="fa fa-microphone"></i> Voice Assistant</a></li>
+            <li><a href="notes.html"><i class="fa fa-book"></i> Note Taking</a></li>
+            <li><a href="todo.html"><i class="fa fa-check-circle"></i> To-Do List</a></li>
+            <li><a href="budget.html"><i class="fa fa-credit-card"></i> Budget Tracker</a></li>
+            <li><a href="gratitude.html"><i class="fa fa-heart"></i> Gratitude List</a></li>
+            <li><a href="events.html"><i class="fa fa-calendar"></i> Event Countdown</a></li>
+            <li><a href="location.html"><i class="fa fa-map-marker"></i> Location Tracker</a></li>
+            
+        </ul>
+    </nav> 
+    </header>
+    <main>
+        <section class="container">
+            <form id="eventForm">
+                <h2>Add a New Event</h2>
+                <input type="text" id="eventName" placeholder="Event Name" required>
+                <input type="date" id="eventDate" required>
+                <button type="submit">Add Event</button>
+            </form>
+            <ul id="eventList"></ul>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude List</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="gratitude.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html"><i class="fa fa-house"></i> Home</a></li>
+            <li><a href="notes.html"><i class="fa fa-book"></i> Note Taking</a></li>
+            <li><a href="todo.html"><i class="fa fa-check-circle"></i> To-Do List</a></li>
+            <li><a href="budget.html"><i class="fa fa-credit-card"></i> Budget Tracker</a></li>
+            <li><a href="gratitude.html"><i class="fa fa-heart"></i> Gratitude List</a></li>
+            <li><a href="events.html"><i class="fa fa-calendar"></i> Event Countdown</a></li>
+            <li><a href="location.html"><i class="fa fa-map-marker"></i> Location Tracker</a></li>
+            
+        </ul>
+    </nav>
+
+    
+    <div class="container">
+        <h1>Gratitude List</h1>
+        <form id="gratitude-form">
+            <input type="text" id="gratitude-input" placeholder="What are you grateful for?" required>
+            <button type="submit" class="cta-button">Add Gratitude</button>
+            <button type="button" id="voice-note-button" class="mic-button">&#128263; Add Voice Note</button> <!-- Microphone button -->
+        </form>
+
+        <h2>Your Gratitude Entries</h2>
+        <ul id="gratitude-list"></ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Evolv Hub. All Rights Reserved.</p>
+    </footer>
+
+    <script src="gratitude.js"></script> <!-- Link to your JavaScript file -->
+</body>
+</html>
